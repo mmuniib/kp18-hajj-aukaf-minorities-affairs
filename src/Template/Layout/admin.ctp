@@ -86,7 +86,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">ADMIN</a>
+                <a class="navbar-brand" href="../../index.html">ADMINBSB - MATERIAL DESIGN</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -306,7 +306,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href='<?= $this->webroot . 'Users/logout'; ?>'><i class="material-icons">input</i>Sign Out</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -321,23 +321,38 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">view_list</i>
+                            <i class="material-icons">assignment</i>
                             <span>Users</span>
                         </a>
                         <ul class="ml-menu">
                             <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
-         <li><?= $this->Html->link(__('New Users'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-                            
+                            <li><?= $this->Html->link(__('New Users'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+                      
                         </ul>
                     </li>
-               
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">assignment</i>
+                            <span>Roles</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles','action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('New Roles'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
+                      
+                        </ul>
+                    </li>
+                   
+                    
+                    
+                    
+                    
                 </ul>
             </div>
             <!-- #Menu -->
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">Admin</a>.
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
                 </div>
                 <div class="version">
                     <b>Version: </b> 1.0.5
@@ -491,10 +506,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <!-- #END# Right Sidebar -->
     </section>
 
+    
     <?= $this->Flash->render() ?>
     
         <?= $this->fetch('content') ?>
-    
 
     <!-- Jquery Core Js -->
     <script src="<?php echo $this->request->webroot ;?>plugins/jquery/jquery.min.js"></script>
