@@ -56,9 +56,10 @@
         echo $this->Form->control('Applicantprofessions.profession');
 
         //save attachments in Applicant's attachment table
-        echo $this->Form->control('applicantAttachments.attachments', ['type' => 'file', 'multiple' => true]);
-        // save households in applicant_household_details table
-        echo $this->Form->control('applicantHouseholdDetails.dependent_family_members');
+        echo $this->Form->control('ApplicantAttachments.attachments[]', ['secure' => false, 'type' => 'file', 'multiple' => true]);
+
+// save households in applicant_household_details table
+        echo $this->Form->control('ApplicantHouseholdDetails.dependent_family_members');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -91,11 +91,6 @@ class AppController extends Controller
         
            
     }
-    public function isAuthorized($user) {
-         if ($this->Auth->user('role_id') == 1) {
-            return true;
-        }
-    }
     
     public function beforeFilter(Event $event) {
         

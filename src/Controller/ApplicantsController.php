@@ -47,25 +47,74 @@ class ApplicantsController extends AppController {
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
+    private function image_validation($image_details = null) {
+        $extentions = array('jpg', 'JPG', 'PNG', 'png', 'jpeg', 'JPEG', 'gif', 'GIF', 'svg', 'SVG');
+        $continue = 1;
+        $error = '';
+        foreach ($image_details as $single_img):
+            $img_ext = pathinfo($single_img['name'], PATHINFO_EXTENSION);
+            if (!in_array($img_ext, $extentions)) {
+                $error = 'invalid image type';
+                $continue = 0;
+                return $error;
+            }
+            if ($single_img['size'] > 1000000) {
+                $error = 'Image size is too big';
+                $continue = 0;
+                return $error;
+            }
+        endforeach;
+        if ($continue == 1) {
+            return $continue;
+        }
+//        exit();
+    }
+
     public function add() {
         $applicant = $this->Applicants->newEntity();
         if ($this->request->is('post')) {
 
-            debug($this->request->data);
-            exit();
-            foreach ($this->request->data as $key => $save_records):
-                if ($key == 'Applicants') {
-                    $applicant = $this->$key->patchEntity($applicant, $save_records);
-                    $this->$key->save($applicant);
-                    $applicant_id = $applicant->id;
+            if ($this->request->data['ApplicantAttachments']['attachments'][0]['name'] <> '') {
+                $valid_image = $this->image_validation($this->request->data['ApplicantAttachments']['attachments']);
+                if ($valid_image == 1) {
+                    foreach ($this->request->data as $key => $save_records):
+                        if ($key == 'Applicants') {
+                            $applicant = $this->$key->patchEntity($applicant, $save_records);
+                            $this->$key->save($applicant);
+                            $applicant_id = $applicant->id;
+                        } else {
+                            if ($key == 'ApplicantAttachments') {
+                                $this->loadModel($key);
+                                $save_attachment = array();
+                                foreach ($save_records['attachments'] as $subkey => $u_img):
+//                                    debug($key);
+                                    $new_name = date('ymdhis') . '-' . $u_img['name'];
+                                    $path = WWW_ROOT . 'img' . DS . 'applicants' . DS . $new_name;
+
+                                    move_uploaded_file($u_img['tmp_name'], $path);
+
+                                    $save_attachment[$subkey]['applicant_id'] = $applicant_id;
+                                    $save_attachment[$subkey]['attachments'] = $new_name;
+                                endforeach;
+                                $attachments_details = $this->$key->newEntities($save_attachment);
+                                $result = $this->$key->saveMany($attachments_details);
+                                debug($save_attachment);
+                                exit();
+                            } else {
+                                $this->loadModel($key);
+                                $child_table = $this->$key->newEntity();
+                                $save_records['applicant_id'] = $applicant_id;
+                                $child_table = $this->$key->patchEntity($child_table, $save_records);
+                                $this->$key->save($child_table);
+                            }
+                        }
+                    endforeach;
                 } else {
-                    $this->loadModel($key);
-                    $child_table = $this->$key->newEntity();
-                    $save_records['applicant_id'] = $applicant_id;
-                    $child_table = $this->$key->patchEntity($child_table, $save_records);
-                    $this->$key->save($child_table);
+                    echo $valid_image;
                 }
-            endforeach;
+            }
+
+
             exit();
 
 
