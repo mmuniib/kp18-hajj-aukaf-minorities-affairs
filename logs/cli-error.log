@@ -18,3 +18,63 @@ Stack Trace:
 #15 {main}
 
 
+2018-07-09 10:13:22 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'minorities_db.religion' doesn't exist in D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'religion', Array, Object(Cake\Database\Schema\TableSchema))
+#1 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('religion', Array)
+#2 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\ORM\Table.php(548): Cake\Database\Schema\CachedCollection->describe('religion')
+#3 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\ORM\Table.php(673): Cake\ORM\Table->getSchema()
+#4 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(220): Cake\ORM\Table->getPrimaryKey()
+#5 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'religion', 'Religion')
+#7 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('Religion')
+#8 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\BakeShell.php(272): Bake\Shell\Task\ModelTask->main('Religion')
+#9 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('religion', 0)
+#10 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\BakeShell.php(273): Cake\Collection\Collection->each(Object(Closure))
+#11 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\Shell.php(518): Bake\Shell\BakeShell->all('religion')
+#12 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#13 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 D:\wamp64\www\minority\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+
+2018-07-09 11:37:04 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'minorities_db.appicantaddresses' doesn't exist in D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'appicantaddress...', Array, Object(Cake\Database\Schema\TableSchema))
+#1 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('appicantaddress...', Array)
+#2 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\ORM\Table.php(548): Cake\Database\Schema\CachedCollection->describe('appicantaddress...')
+#3 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\ORM\Table.php(673): Cake\ORM\Table->getSchema()
+#4 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(220): Cake\ORM\Table->getPrimaryKey()
+#5 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'appicantaddress...', 'Appicantaddress...')
+#7 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('Appicantaddress...')
+#8 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\BakeShell.php(272): Bake\Shell\Task\ModelTask->main('Appicantaddress...')
+#9 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('Appicantaddress...', 0)
+#10 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\BakeShell.php(273): Cake\Collection\Collection->each(Object(Closure))
+#11 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\Shell.php(518): Bake\Shell\BakeShell->all('Appicantaddress...')
+#12 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#13 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 D:\wamp64\www\minority\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+
+2018-07-09 11:37:28 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'minorities_db.appicantaddresses' doesn't exist in D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'appicantaddress...', Array, Object(Cake\Database\Schema\TableSchema))
+#1 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('appicantaddress...', Array)
+#2 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\ORM\Table.php(548): Cake\Database\Schema\CachedCollection->describe('appicantaddress...')
+#3 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\ORM\Table.php(673): Cake\ORM\Table->getSchema()
+#4 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(220): Cake\ORM\Table->getPrimaryKey()
+#5 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(130): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(113): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'appicantaddress...', 'Appicantaddress...')
+#7 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(100): Bake\Shell\Task\ModelTask->bake('Appicantaddress...')
+#8 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\BakeShell.php(272): Bake\Shell\Task\ModelTask->main('Appicantaddress...')
+#9 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('appicantaddress...', 0)
+#10 D:\wamp64\www\minority\vendor\cakephp\bake\src\Shell\BakeShell.php(273): Cake\Collection\Collection->each(Object(Closure))
+#11 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\Shell.php(518): Bake\Shell\BakeShell->all('appicantaddress...')
+#12 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\CommandRunner.php(342): Cake\Console\Shell->runCommand(Array, true)
+#13 D:\wamp64\www\minority\vendor\cakephp\cakephp\src\Console\CommandRunner.php(164): Cake\Console\CommandRunner->runShell(Object(Bake\Shell\BakeShell), Array)
+#14 D:\wamp64\www\minority\bin\cake.php(12): Cake\Console\CommandRunner->run(Array)
+#15 {main}
+
+
