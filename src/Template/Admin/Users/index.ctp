@@ -9,8 +9,8 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    JQUERY DATATABLES
-                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
+                     Users
+                    
                 </h2>
             </div>
             
@@ -20,7 +20,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <?= __('Users') ?>
+                                <?= __('View Users') ?>
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -40,32 +40,30 @@
                                 <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                                     <thead>
                                         <tr>
-                                            <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('role_id') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('username') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('address') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('password') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('photo') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                                            <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                            <th><?= $this->Paginator->sort('id') ?></th>
+                                            <th><?= $this->Paginator->sort('role_id') ?></th>
+                                            <th><?= $this->Paginator->sort('username') ?></th>
+                                            <th><?= $this->Paginator->sort('phone') ?></th>
+                                            <th><?= $this->Paginator->sort('address') ?></th>
+                                           
+                                            <th><?= $this->Paginator->sort('email') ?></th>
+                                            <th><?= $this->Paginator->sort('photo') ?></th>
+                                            
+                                            <th  class="actions"><?= __('Actions') ?></th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('role_id') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('username') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('address') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('password') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('photo') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                                            <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                                            <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                            <th><?= $this->Paginator->sort('id') ?></th>
+                                            <th><?= $this->Paginator->sort('role_id') ?></th>
+                                            <th><?= $this->Paginator->sort('username') ?></th>
+                                            <th><?= $this->Paginator->sort('phone') ?></th>
+                                            <th><?= $this->Paginator->sort('address') ?></th>
+                                          
+                                            <th><?= $this->Paginator->sort('email') ?></th>
+                                            <th><?= $this->Paginator->sort('photo') ?></th>
+                                            
+                                            <th  class="actions"><?= __('Actions') ?></th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -76,13 +74,12 @@
                                                 <td><?= h($user->username) ?></td>
                                                 <td><?= h($user->phone) ?></td>
                                                 <td><?= h($user->address) ?></td>
-                                                <td><?= h($user->password) ?></td>
+                                               
                                                 <td><?= h($user->email) ?></td>
                                                 <td><?= h($user->photo) ?></td>
-                                                <td><?= h($user->created) ?></td>
-                                                <td><?= h($user->modified) ?></td>
+                                                
                                                 <td class="actions">
-                                                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
+                                                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id,]) ?>
                                                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
                                                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
                                                 </td>

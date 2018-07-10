@@ -12,6 +12,7 @@
  * @since         0.10.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
+
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
@@ -73,10 +74,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="search-icon">
             <i class="material-icons">search</i>
         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4d0a7b095a50fc061453ba70f19e44c603f3dafa
         <input type="text" placeholder="START TYPING...">
         <div class="close-search">
             <i class="material-icons">close</i>
@@ -89,24 +86,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">ADMINBSB - MATERIAL DESIGN</a>
-<<<<<<< HEAD
-=======
-        <!-- #END# Page Loader -->
-        <!-- Overlay For Sidebars -->
-        <div class="overlay"></div>
-        <!-- #END# Overlay For Sidebars -->
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <div class="search-icon">
-                <i class="material-icons">search</i>
->>>>>>> master
-            </div>
-            <input type="text" placeholder="START TYPING...">
-            <div class="close-search">
-                <i class="material-icons">close</i>
-=======
->>>>>>> 4d0a7b095a50fc061453ba70f19e44c603f3dafa
+                <a class="navbar-brand" href="../../index.html">Admin Minorities Department</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -289,10 +269,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                                             <div class="progress">
                                                 <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
                                                 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4d0a7b095a50fc061453ba70f19e44c603f3dafa
                                             </div>
                                         </a>
                                     </li>
@@ -349,7 +325,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             <span>Users</span>
                         </a>
                         <ul class="ml-menu">
-                            <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users','action' => 'index']) ?></li>
                             <li><?= $this->Html->link(__('New Users'), ['controller' => 'Users', 'action' => 'add']) ?></li>
                       
                         </ul>
@@ -376,209 +352,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2018  <a href="javascript:void(0);">Admin Minorites Department</a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 1.0.5
-<<<<<<< HEAD
-=======
-                                                <div class="menu-info">
-                                                    <h4><b>Nancy Doe</b> deleted account</h4>
-                                                    <p>
-                                                        <i class="material-icons">access_time</i> 3 hours ago
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <div class="icon-circle bg-orange">
-                                                    <i class="material-icons">mode_edit</i>
-                                                </div>
-                                                <div class="menu-info">
-                                                    <h4><b>Nancy</b> changed name</h4>
-                                                    <p>
-                                                        <i class="material-icons">access_time</i> 2 hours ago
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <div class="icon-circle bg-blue-grey">
-                                                    <i class="material-icons">comment</i>
-                                                </div>
-                                                <div class="menu-info">
-                                                    <h4><b>John</b> commented your post</h4>
-                                                    <p>
-                                                        <i class="material-icons">access_time</i> 4 hours ago
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <div class="icon-circle bg-light-green">
-                                                    <i class="material-icons">cached</i>
-                                                </div>
-                                                <div class="menu-info">
-                                                    <h4><b>John</b> updated status</h4>
-                                                    <p>
-                                                        <i class="material-icons">access_time</i> 3 hours ago
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <div class="icon-circle bg-purple">
-                                                    <i class="material-icons">settings</i>
-                                                </div>
-                                                <div class="menu-info">
-                                                    <h4>Settings updated</h4>
-                                                    <p>
-                                                        <i class="material-icons">access_time</i> Yesterday
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="javascript:void(0);">View All Notifications</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- #END# Notifications -->
-                        <!-- Tasks -->
-                        <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                                <i class="material-icons">flag</i>
-                                <span class="label-count">9</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">TASKS</li>
-                                <li class="body">
-                                    <ul class="menu tasks">
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <h4>
-                                                    Footer display issue
-                                                    <small>32%</small>
-                                                </h4>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-pink" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 32%">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <h4>
-                                                    Make new buttons
-                                                    <small>45%</small>
-                                                </h4>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-cyan" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <h4>
-                                                    Create new dashboard
-                                                    <small>54%</small>
-                                                </h4>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-teal" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 54%">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <h4>
-                                                    Solve transition issue
-                                                    <small>65%</small>
-                                                </h4>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">
-                                                <h4>
-                                                    Answer GitHub questions
-                                                    <small>92%</small>
-                                                </h4>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 92%">
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer">
-                                    <a href="javascript:void(0);">View All Tasks</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- #END# Tasks -->
-                        <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- #Top Bar -->
-        <section>
-            <!-- Left Sidebar -->
-            <aside id="leftsidebar" class="sidebar">
-                <!-- User Info -->
-                <div class="user-info">
-                    <div class="image">
-                        <img src="../../images/user.png" width="48" height="48" alt="User" />
-                    </div>
-                    <div class="info-container">
-                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                        <div class="email">john.doe@example.com</div>
-                        <div class="btn-group user-helper-dropdown">
-                            <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                            <ul class="dropdown-menu pull-right">
-                                <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                                <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                                <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
-                            </ul>
-                        </div>
-                    </div>
->>>>>>> master
-                </div>
-                <!-- #User Info -->
-                <!-- Menu -->
-                <div class="menu">
-                    <ul class="list">
-                        <li class="header">MAIN NAVIGATION</li>
-
-
-
-                        <li>
-                            <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">assignment</i>
-                                <span>Users</span>
-                            </a>
-                            <ul class="ml-menu">
-                                <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
-                                <li><?= $this->Html->link(__('New Users'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-
-                            </ul>
-=======
+                    <b>Version: </b> 1
                 </div>
             </div>
             <!-- #Footer -->
@@ -672,7 +449,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                         <li data-theme="black">
                             <div class="black"></div>
                             <span>Black</span>
->>>>>>> 4d0a7b095a50fc061453ba70f19e44c603f3dafa
                         </li>
                     </ul>
                 </div>
@@ -730,10 +506,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <!-- #END# Right Sidebar -->
     </section>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4d0a7b095a50fc061453ba70f19e44c603f3dafa
     
     <?= $this->Flash->render() ?>
     
@@ -776,59 +548,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     
     <!-- Custom Js -->
     <script src="<?php echo $this->request->webroot ;?>js/admin.js"></script>
+     <script src="<?php echo $this->request->webroot ;?>js/pages/tables/jquery-datatable.js"></script>
     <script src="<?php echo $this->request->webroot ;?>js/pages/forms/form-validation.js"></script>
 
     <!-- Demo Js -->
     <script src="<?php echo $this->request->webroot ;?>js/demo.js"></script>
 </body>
-<<<<<<< HEAD
-=======
-        <?= $this->fetch('content') ?>
-
-        <!-- Jquery Core Js -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery/jquery.min.js"></script>
-
-        <!-- Bootstrap Core Js -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/bootstrap/js/bootstrap.js"></script>
-
-        <!-- Select Plugin Js -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-        <!-- Slimscroll Plugin Js -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-        <!-- Jquery Validation Plugin Css -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-validation/jquery.validate.js"></script>
-
-        <!-- JQuery Steps Plugin Js -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-steps/jquery.steps.js"></script>
-
-        <!-- Sweet Alert Plugin Js -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/sweetalert/sweetalert.min.js"></script>
-
-        <!-- Waves Effect Plugin Js -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/node-waves/waves.js"></script>
-
-        <!-- Jquery DataTable Plugin Js -->
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/jquery.dataTables.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-
-        <!-- Custom Js -->
-        <script src="<?php echo $this->request->webroot; ?>js/admin.js"></script>
-        <script src="<?php echo $this->request->webroot; ?>js/pages/forms/form-validation.js"></script>
-
-        <!-- Demo Js -->
-        <script src="<?php echo $this->request->webroot; ?>js/demo.js"></script>
-    </body>
->>>>>>> master
-=======
->>>>>>> 4d0a7b095a50fc061453ba70f19e44c603f3dafa
 
 </html>
+

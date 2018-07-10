@@ -9,16 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Applicants Model
  *
- * @property \App\Model\Table\ReligionsTable|\Cake\ORM\Association\BelongsTo $Religions
- * @property \App\Model\Table\ApplicantAttachmentsTable|\Cake\ORM\Association\HasMany $ApplicantAttachments
- * @property \App\Model\Table\ApplicantHouseholdDetailsTable|\Cake\ORM\Association\HasMany $ApplicantHouseholdDetails
- * @property \App\Model\Table\ApplicantaddressesTable|\Cake\ORM\Association\HasMany $Applicantaddresses
- * @property \App\Model\Table\ApplicantcontactsTable|\Cake\ORM\Association\HasMany $Applicantcontacts
- * @property \App\Model\Table\ApplicantincomesTable|\Cake\ORM\Association\HasMany $Applicantincomes
- * @property \App\Model\Table\ApplicantprofessionsTable|\Cake\ORM\Association\HasMany $Applicantprofessions
- * @property \App\Model\Table\AppliesTable|\Cake\ORM\Association\HasMany $Applies
- * @property \App\Model\Table\ProvidedFundsTable|\Cake\ORM\Association\HasMany $ProvidedFunds
- *
  * @method \App\Model\Entity\Applicant get($primaryKey, $options = [])
  * @method \App\Model\Entity\Applicant newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Applicant[] newEntities(array $data, array $options = [])
@@ -27,8 +17,6 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\Applicant patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
  * @method \App\Model\Entity\Applicant[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\Applicant findOrCreate($search, callable $callback = null, $options = [])
- *
- * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
 class ApplicantsTable extends Table
 {
@@ -46,37 +34,6 @@ class ApplicantsTable extends Table
         $this->setTable('applicants');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
-
-        $this->addBehavior('Timestamp');
-
-        $this->belongsTo('Religions', [
-            'foreignKey' => 'religion_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->hasMany('ApplicantAttachments', [
-            'foreignKey' => 'applicant_id'
-        ]);
-        $this->hasMany('ApplicantHouseholdDetails', [
-            'foreignKey' => 'applicant_id'
-        ]);
-        $this->hasMany('Applicantaddresses', [
-            'foreignKey' => 'applicant_id'
-        ]);
-        $this->hasMany('Applicantcontacts', [
-            'foreignKey' => 'applicant_id'
-        ]);
-        $this->hasMany('Applicantincomes', [
-            'foreignKey' => 'applicant_id'
-        ]);
-        $this->hasMany('Applicantprofessions', [
-            'foreignKey' => 'applicant_id'
-        ]);
-        $this->hasMany('Applies', [
-            'foreignKey' => 'applicant_id'
-        ]);
-        $this->hasMany('ProvidedFunds', [
-            'foreignKey' => 'applicant_id'
-        ]);
     }
 
     /**
@@ -93,26 +50,61 @@ class ApplicantsTable extends Table
 
         $validator
             ->scalar('name')
-            ->maxLength('name', 40)
+            ->maxLength('name', 222)
             ->requirePresence('name', 'create')
             ->notEmpty('name');
 
         $validator
-            ->scalar('father_or_husband_name')
-            ->maxLength('father_or_husband_name', 40)
-            ->requirePresence('father_or_husband_name', 'create')
-            ->notEmpty('father_or_husband_name');
+            ->scalar('fname')
+            ->maxLength('fname', 222)
+            ->requirePresence('fname', 'create')
+            ->notEmpty('fname');
 
         $validator
             ->scalar('cnic')
-            ->maxLength('cnic', 15)
+            ->maxLength('cnic', 222)
             ->requirePresence('cnic', 'create')
             ->notEmpty('cnic');
 
         $validator
-            ->scalar('groom_or_bride_name')
-            ->maxLength('groom_or_bride_name', 40)
-            ->allowEmpty('groom_or_bride_name');
+            ->dateTime('date of birth')
+            ->requirePresence('date of birth', 'create')
+            ->notEmpty('date of birth');
+
+        $validator
+            ->scalar('current address')
+            ->maxLength('current address', 222)
+            ->requirePresence('current address', 'create')
+            ->notEmpty('current address');
+
+        $validator
+            ->scalar('permanent address')
+            ->maxLength('permanent address', 222)
+            ->requirePresence('permanent address', 'create')
+            ->notEmpty('permanent address');
+
+        $validator
+            ->scalar('zipcode')
+            ->maxLength('zipcode', 222)
+            ->requirePresence('zipcode', 'create')
+            ->notEmpty('zipcode');
+
+        $validator
+            ->email('email')
+            ->requirePresence('email', 'create')
+            ->notEmpty('email');
+
+        $validator
+            ->scalar('telephone number')
+            ->maxLength('telephone number', 222)
+            ->requirePresence('telephone number', 'create')
+            ->notEmpty('telephone number');
+
+        $validator
+            ->scalar('mobile number')
+            ->maxLength('mobile number', 222)
+            ->requirePresence('mobile number', 'create')
+            ->notEmpty('mobile number');
 
         return $validator;
     }
@@ -126,7 +118,7 @@ class ApplicantsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['religion_id'], 'Religions'));
+        $rules->add($rules->isUnique(['email']));
 
         return $rules;
     }

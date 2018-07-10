@@ -1,7 +1,10 @@
 <?php
 namespace App\Controller\Admin;
+
 use App\Controller\AppController;
+
 use Cake\Auth\DefaultPasswordHasher;
+
 /**
  * Users Controller
  *
@@ -35,6 +38,7 @@ class UsersController extends AppController
        }
        
    }
+
    public function logout() {
        return $this->redirect($this->Auth->logout());
    }
@@ -44,27 +48,18 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|void
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 4d0a7b095a50fc061453ba70f19e44c603f3dafa
     public function index()
     {
         $this->paginate = [
             'contain' => ['Roles']
         ];
         $this->viewBuilder()->layout('admin'); 
-<<<<<<< HEAD
-=======
-    public function index() {
-
-        $this->viewBuilder()->layout('admin');
->>>>>>> master
-=======
->>>>>>> 4d0a7b095a50fc061453ba70f19e44c603f3dafa
+        
         $users = $this->paginate($this->Users);
+
         $this->set(compact('users'));
     }
+
     /**
      * View method
      *
@@ -77,8 +72,10 @@ class UsersController extends AppController
         $user = $this->Users->get($id, [
             'contain' => ['Roles']
         ]);
+
         $this->set('user', $user);
     }
+
     /**
      * Add method
      *
@@ -93,6 +90,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
+
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
@@ -100,6 +98,7 @@ class UsersController extends AppController
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $this->set(compact('user', 'roles'));
     }
+
     /**
      * Edit method
      *
@@ -116,6 +115,7 @@ class UsersController extends AppController
             $user = $this->Users->patchEntity($user, $this->request->getData());
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
+
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
@@ -123,6 +123,7 @@ class UsersController extends AppController
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $this->set(compact('user', 'roles'));
     }
+
     /**
      * Delete method
      *
@@ -139,6 +140,7 @@ class UsersController extends AppController
         } else {
             $this->Flash->error(__('The user could not be deleted. Please, try again.'));
         }
+
         return $this->redirect(['action' => 'index']);
     }
 }
