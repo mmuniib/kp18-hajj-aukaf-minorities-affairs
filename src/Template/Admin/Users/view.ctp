@@ -4,65 +4,80 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="users view large-9 medium-8 columns content">
-    <h3><?= h($user->id) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('User Type') ?></th>
-            <td><?= h($user->user_type) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('First Name') ?></th>
-            <td><?= h($user->first_name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Last Name') ?></th>
-            <td><?= h($user->last_name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Username') ?></th>
-            <td><?= h($user->username) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Email') ?></th>
-            <td><?= h($user->email) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Password') ?></th>
-            <td><?= h($user->password) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Phone') ?></th>
-            <td><?= h($user->phone) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('City') ?></th>
-            <td><?= h($user->city) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('State') ?></th>
-            <td><?= h($user->state) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Zip') ?></th>
-            <td><?= h($user->zip) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Country') ?></th>
-            <td><?= h($user->country) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
-        </tr>
-    </table>
-</div>
+<section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>
+                    Users
+                </h2>
+            </div>
+            
+            <!-- Exportable Table -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2>
+                                <?= __('View Users') ?>
+                            </h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href='<?= $this->request->webroot . 'admin/Users/add'; ?>'>Add Users</a></li>
+                                        <li><a href='<?= $this->request->webroot . 'admin/Users'; ?>'>View Users</a></li>
+                                       
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                   <h3><?= h($user->id) ?></h3>
+                                           
+                                    <tr>
+                                    <th scope="row"><?= __('Role') ?></th>
+                                    <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><?= __('Username') ?></th>
+                                    <td><?= h($user->username) ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><?= __('Phone') ?></th>
+                                    <td><?= h($user->phone) ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><?= __('Address') ?></th>
+                                    <td><?= h($user->address) ?></td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row"><?= __('Email') ?></th>
+                                    <td><?= h($user->email) ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><?= __('Photo') ?></th>
+                                    <td><?= h($user->photo) ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><?= __('Id') ?></th>
+                                    <td><?= $this->Number->format($user->id) ?></td>
+                                </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Exportable Table -->
+        </div>
+    </section>
+
+
+
+

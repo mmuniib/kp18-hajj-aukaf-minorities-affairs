@@ -47,7 +47,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo $this->request->webroot ;?>css/themes/all-themes.css" rel="stylesheet" />
 </head>
-
+                   <?php 
+                    $loguser = $this->Session->read('Auth.User');
+                    ?>
 <body class="theme-red">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
@@ -286,6 +288,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </div>
     </nav>
     <!-- #Top Bar -->
+    
     <section>
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
@@ -295,8 +298,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <img src="../../images/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php if(!empty($loguser)){
+                         echo $loguser['username'];
+                        } ?></div>
+                   
+                    <div class="email">
+                        <?php if(!empty($loguser)){
+                         echo $loguser['email'];
+                        } ?> </div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -306,7 +315,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                             
+                            <li><a href='<?= $this->request->webroot . 'admin/Users/logout'; ?>'><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
                 </div>

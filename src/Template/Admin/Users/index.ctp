@@ -28,9 +28,7 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                        <li><a href='<?= $this->request->webroot . 'admin/Users/add'; ?>'>Add Users</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -79,9 +77,9 @@
                                                 <td><?= h($user->photo) ?></td>
                                                 
                                                 <td class="actions">
-                                                    <?= $this->Html->link(__('View'), ['action' => 'view', $user->id,]) ?>
-                                                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                                                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
+                                                    <?= $this->Html->link(__('<i class="glyphicon glyphicon-eye-open"></i>'), ['action' => 'view', $user->id,],array('escape' => false)) ?>
+                                                    <?= $this->Html->link(__('<i class="glyphicon glyphicon-edit"></i>'), ['action' => 'edit', $user->id],array('escape' => false)) ?>
+                                                    <?= $this->Form->postLink(__('<i class="glyphicon glyphicon-trash"></i>'), ['action' => 'delete', $user->id],array('escape' => false), ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
                                                 </td>
                                             </tr>
                                             <?php endforeach; ?>
