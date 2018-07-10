@@ -8,8 +8,7 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    JQUERY DATATABLES
-                    <small>Taken from <a href="https://datatables.net/" target="_blank">datatables.net</a></small>
+                    Roles
                 </h2>
             </div>
             
@@ -19,7 +18,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <?= __('Users') ?>
+                                <?= __('View Roles') ?>
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -40,18 +39,18 @@
                                     <thead>
                                         <tr>
                                             <tr>
-                                                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                                                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                                                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                                <th><?= $this->Paginator->sort('id') ?></th>
+                                                <th><?= $this->Paginator->sort('name') ?></th>
+                                                <th  class="actions"><?= __('Actions') ?></th>
             
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             
-                                                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                                                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                                                <th scope="col" class="actions"><?= __('Actions') ?></th>
+                                                <th><?= $this->Paginator->sort('id') ?></th>
+                                                <th><?= $this->Paginator->sort('name') ?></th>
+                                                <th class="actions"><?= __('Actions') ?></th>
 
                                         </tr>
                                     </tfoot>

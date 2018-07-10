@@ -12,6 +12,7 @@
  * @since         0.10.0
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
+
 $cakeDescription = 'CakePHP: the rapid development php framework';
 ?>
 <!DOCTYPE html>
@@ -85,7 +86,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">ADMINBSB - MATERIAL DESIGN</a>
+                <a class="navbar-brand" href="../../index.html">Admin Minorities Department</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -324,7 +325,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             <span>Users</span>
                         </a>
                         <ul class="ml-menu">
-                            <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users','action' => 'index']) ?></li>
                             <li><?= $this->Html->link(__('New Users'), ['controller' => 'Users', 'action' => 'add']) ?></li>
                       
                         </ul>
@@ -351,10 +352,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">AdminBSB - Material Design</a>.
+                    &copy; 2018  <a href="javascript:void(0);">Admin Minorites Department</a>.
                 </div>
                 <div class="version">
-                    <b>Version: </b> 1.0.5
+                    <b>Version: </b> 1
                 </div>
             </div>
             <!-- #Footer -->
@@ -547,6 +548,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     
     <!-- Custom Js -->
     <script src="<?php echo $this->request->webroot ;?>js/admin.js"></script>
+     <script src="<?php echo $this->request->webroot ;?>js/pages/tables/jquery-datatable.js"></script>
     <script src="<?php echo $this->request->webroot ;?>js/pages/forms/form-validation.js"></script>
 
     <!-- Demo Js -->
@@ -554,3 +556,4 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 </body>
 
 </html>
+
