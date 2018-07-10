@@ -24,7 +24,16 @@ class ApplicantsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.applicants'
+        'app.applicants',
+        'app.religions',
+        'app.applicant_attachments',
+        'app.applicant_household_details',
+        'app.applicantaddresses',
+        'app.applicantcontacts',
+        'app.applicantincomes',
+        'app.applicantprofessions',
+        'app.applies',
+        'app.provided_funds'
     ];
 
     /**
