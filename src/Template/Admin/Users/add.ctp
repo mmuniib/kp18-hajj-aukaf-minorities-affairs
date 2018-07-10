@@ -33,6 +33,12 @@
                         <div class="body">
                             <?= $this->Form->create($user,['id'=>'form_validation']) ?>
                             
+                               <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <?php echo $this->Form->control('role_id', ['options' ,'class'=>'form-control','label'=>false]);?>
+                                       
+                                    </div>
+                                </div>
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <?php echo $this->Form->text('username',['class'=>'form-control']);?>
