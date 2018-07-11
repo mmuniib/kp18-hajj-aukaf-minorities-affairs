@@ -1,8 +1,6 @@
 <?php
 namespace App\Controller;
-
 use App\Controller\AppController;
-
 /**
  * Applicants Controller
  *
@@ -10,21 +8,19 @@ use App\Controller\AppController;
  *
  * @method \App\Model\Entity\Applicant[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class ApplicantsController extends AppController
-{
-
+class ApplicantsController extends AppController {
     /**
      * Index method
      *
      * @return \Cake\Http\Response|void
      */
-    public function index()
-    {
+    public function index() {
+        $this->paginate = [
+            'contain' => ['Religions']
+        ];
         $applicants = $this->paginate($this->Applicants);
-
         $this->set(compact('applicants'));
     }
-
     /**
      * View method
      *
@@ -32,35 +28,91 @@ class ApplicantsController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null) {
         $applicant = $this->Applicants->get($id, [
-            'contain' => []
+            'contain' => ['Religions', 'ApplicantAttachments', 'ApplicantHouseholdDetails', 'Applicantaddresses', 'Applicantcontacts', 'Applicantincomes', 'Applicantprofessions', 'Applies', 'ProvidedFunds']
         ]);
-
         $this->set('applicant', $applicant);
     }
-
     /**
      * Add method
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
+    private function image_validation($image_details = null) {
+        $extentions = array('jpg', 'JPG', 'PNG', 'png', 'jpeg', 'JPEG', 'gif', 'GIF', 'svg', 'SVG');
+        $continue = 1;
+        $error = '';
+        foreach ($image_details as $single_img):
+            $img_ext = pathinfo($single_img['name'], PATHINFO_EXTENSION);
+            if (!in_array($img_ext, $extentions)) {
+                $error = 'invalid image type';
+                $continue = 0;
+                return $error;
+            }
+            if ($single_img['size'] > 1000000) {
+                $error = 'Image size is too big';
+                $continue = 0;
+                return $error;
+            }
+        endforeach;
+        if ($continue == 1) {
+            return $continue;
+        }
+//        exit();
+    }
+    public function add() {
         $applicant = $this->Applicants->newEntity();
         if ($this->request->is('post')) {
-            $applicant = $this->Applicants->patchEntity($applicant, $this->request->getData());
+            if ($this->request->data['ApplicantAttachments']['attachments'][0]['name'] <> '') {
+                $valid_image = $this->image_validation($this->request->data['ApplicantAttachments']['attachments']);
+                if ($valid_image == 1) {
+                    foreach ($this->request->data as $key => $save_records):
+                        if ($key == 'Applicants') {
+                            $applicant = $this->$key->patchEntity($applicant, $save_records);
+                            $this->$key->save($applicant);
+                            $applicant_id = $applicant->id;
+                        } else {
+                            if ($key == 'ApplicantAttachments') {
+                                $this->loadModel($key);
+                                $save_attachment = array();
+                                foreach ($save_records['attachments'] as $subkey => $u_img):
+//                                    debug($key);
+                                    $new_name = date('ymdhis') . '-' . $u_img['name'];
+                                    $path = WWW_ROOT . 'img' . DS . 'applicants' . DS . $new_name;
+                                    move_uploaded_file($u_img['tmp_name'], $path);
+                                    $save_attachment[$subkey]['applicant_id'] = $applicant_id;
+                                    $save_attachment[$subkey]['attachments'] = $new_name;
+                                endforeach;
+                                $attachments_details = $this->$key->newEntities($save_attachment);
+                                $result = $this->$key->saveMany($attachments_details);
+                                debug($save_attachment);
+                                exit();
+                            } else {
+                                $this->loadModel($key);
+                                $child_table = $this->$key->newEntity();
+                                $save_records['applicant_id'] = $applicant_id;
+                                $child_table = $this->$key->patchEntity($child_table, $save_records);
+                                $this->$key->save($child_table);
+                            }
+                        }
+                    endforeach;
+                } else {
+                    echo $valid_image;
+                }
+            }
+            exit();
             if ($this->Applicants->save($applicant)) {
                 $this->Flash->success(__('The applicant has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The applicant could not be saved. Please, try again.'));
         }
-        $this->set(compact('applicant'));
+        $religions = $this->Applicants->Religions->find('list');
+//        debug($religions->toArray());
+//        exit();
+        $this->set(compact('applicant', 'religions'));
     }
-
     /**
      * Edit method
      *
@@ -68,8 +120,7 @@ class ApplicantsController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
-    {
+    public function edit($id = null) {
         $applicant = $this->Applicants->get($id, [
             'contain' => []
         ]);
@@ -77,14 +128,13 @@ class ApplicantsController extends AppController
             $applicant = $this->Applicants->patchEntity($applicant, $this->request->getData());
             if ($this->Applicants->save($applicant)) {
                 $this->Flash->success(__('The applicant has been saved.'));
-
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The applicant could not be saved. Please, try again.'));
         }
-        $this->set(compact('applicant'));
+        $religions = $this->Applicants->Religions->find('list', ['limit' => 200]);
+        $this->set(compact('applicant', 'religions'));
     }
-
     /**
      * Delete method
      *
@@ -92,8 +142,7 @@ class ApplicantsController extends AppController
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
-    {
+    public function delete($id = null) {
         $this->request->allowMethod(['post', 'delete']);
         $applicant = $this->Applicants->get($id);
         if ($this->Applicants->delete($applicant)) {
@@ -101,7 +150,6 @@ class ApplicantsController extends AppController
         } else {
             $this->Flash->error(__('The applicant could not be deleted. Please, try again.'));
         }
-
         return $this->redirect(['action' => 'index']);
     }
 }

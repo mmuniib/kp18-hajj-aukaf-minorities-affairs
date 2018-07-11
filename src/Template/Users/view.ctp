@@ -23,8 +23,8 @@
             <td><?= $user->has('role') ? $this->Html->link($user->role->name, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Username') ?></th>
-            <td><?= h($user->username) ?></td>
+            <th scope="row"><?= __('Name') ?></th>
+            <td><?= h($user->name) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Phone') ?></th>

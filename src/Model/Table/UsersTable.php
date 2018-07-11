@@ -60,9 +60,9 @@ class UsersTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('username')
-            ->maxLength('username', 50)
-            ->allowEmpty('username');
+            ->scalar('name')
+            ->maxLength('name', 50)
+            ->allowEmpty('name');
 
         $validator
             ->scalar('phone')
@@ -103,7 +103,6 @@ class UsersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['username']));
         $rules->add($rules->isUnique(['email']));
         $rules->add($rules->existsIn(['role_id'], 'Roles'));
 
