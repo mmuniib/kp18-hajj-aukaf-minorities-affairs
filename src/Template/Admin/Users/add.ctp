@@ -4,7 +4,6 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-
 <section class="content">
         <div class="container-fluid">
             <div class="block-header">
@@ -33,14 +32,6 @@
                         </div>
                         <div class="body">
                             <?= $this->Form->create($user,['id'=>'form_validation']) ?>
-                                
-                               <div class="form-group form-float">
-                                   
-                                    <div class="form-line">
-                                        <?php echo $this->Form->control('role_id', ['options' ,'class'=>'form-control show-tick','label'=>false]);?>
-                                       
-                                    </div>
-                                </div>
                             
                                 <div class="form-group form-float">
                                     <div class="form-line">
@@ -79,7 +70,6 @@
                                         <label class="form-label">Photo</label>
                                     </div>
                                 </div>
-                            
                                 
                                 <button class="btn btn-primary waves-effect" type="submit">SUBMIT</button>
                             <?= $this->Form->end() ?>
@@ -91,7 +81,4 @@
            
             
         </div>
-</section>
-    
-
-
+    </section>
