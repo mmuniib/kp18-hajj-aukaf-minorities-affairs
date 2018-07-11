@@ -53,7 +53,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <link href="<?php echo $this->request->webroot ;?>css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<body class="login-page">
+<body class="login-page" style="background: #009688">
     <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);">Admin<b></b></a>

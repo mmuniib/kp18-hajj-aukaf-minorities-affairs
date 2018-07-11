@@ -35,7 +35,7 @@ class RolesController extends AppController
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
-    {
+    {   $this->viewBuilder()->layout('admin');
         $role = $this->Roles->get($id, [
             'contain' => ['Users']
         ]);

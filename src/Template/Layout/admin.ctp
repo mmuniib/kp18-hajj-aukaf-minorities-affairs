@@ -117,6 +117,7 @@
                                                 <div class="icon-circle bg-red">
                                                     <i class="material-icons">delete_forever</i>
                                                 </div>
+
                                                 <div class="menu-info">
                                                     <h4><b>Nancy Doe</b> deleted account</h4>
                                                     <p>
