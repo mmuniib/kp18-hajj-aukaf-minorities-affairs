@@ -20,7 +20,7 @@ class ApplicantsController extends AppController {
      */
     public function beforeFilter(\Cake\Event\Event $event) {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add']);
+        $this->Auth->allow(['']);
     }
 
     public function index() {
@@ -79,7 +79,6 @@ class ApplicantsController extends AppController {
         $applicant = $this->Applicants->newEntity();
         if ($this->request->is('post')) {
 
-//            debug($this->request->data);exit();
             if ($this->request->data['ApplicantAttachments']['attachments'][0]['name'] <> '') {
                 $valid_image = $this->image_validation($this->request->data['ApplicantAttachments']['attachments']);
                 if ($valid_image == 1) {
@@ -111,6 +110,7 @@ class ApplicantsController extends AppController {
 //                                    return $this->redirect(['action' => 'index']);
                                 }
                             } else {
+                                 debug($key);
                                 $this->loadModel($key);
                                 $child_table = $this->$key->newEntity();
                                 $save_records['applicant_id'] = $applicant_id;

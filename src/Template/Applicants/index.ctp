@@ -45,7 +45,9 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($applicants as $applicant): ?>
+            <?php foreach ($applicants as $applicant):
+               debug($applicant);exit;
+                ?>
             <tr>
                 <td><?= $this->Number->format($applicant->id) ?></td>
                 <td><?= h($applicant->name) ?></td>

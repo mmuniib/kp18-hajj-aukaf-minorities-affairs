@@ -295,14 +295,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <section>
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
-            <!-- User Info -->
+            <!--  Info -->
             <div class="user-info">
                 <div class="image">
                     <img src="../../images/user.png" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php if(!empty($loguser)){
-                         echo $loguser['username'];
+                         echo $loguser['name'];
                         } ?></div>
                    
                     <div class="email">
@@ -331,6 +331,29 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                     <li class="header">MAIN NAVIGATION</li>
                     
                     
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">assignment</i>
+                            <span>Religions</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li><?= $this->Html->link(__('List Religions'), ['controller' => 'Religions','action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('New Religions'), ['controller' => 'Religions', 'action' => 'add']) ?></li>
+                      
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">assignment</i>
+                            <span>Applicants</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li><?= $this->Html->link(__('List Applicants'), ['controller' => 'Applicants','action' => 'index']) ?></li>
+                            <li><?= $this->Html->link(__('New Applicants'), ['controller' => 'Applicants', 'action' => 'add']) ?></li>
+                      
+                        </ul>
+                    </li>
                     
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">

@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="block-header">
                 <h2>
-                    Roles
+                    Religions
                 </h2>
             </div>
             
@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <?= __('View Roles') ?>
+                                <?= __('View Religions') ?>
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">

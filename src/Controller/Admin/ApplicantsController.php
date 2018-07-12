@@ -18,16 +18,14 @@ class ApplicantsController extends AppController {
      *
      * @return \Cake\Http\Response|void
      */
-    public function beforeFilter(\Cake\Event\Event $event) {
-        parent::beforeFilter($event);
-        $this->Auth->allow(['add']);
-    }
-
     public function index() {
+        $this->viewBuilder()->layout('admin');
         $this->paginate = [
-            'contain' => ['Religions']
+            'contain' => ['Applicantaddresses','Applicantcontacts']
         ];
         $applicants = $this->paginate($this->Applicants);
+//        debug($applicants);
+//        exit();
 
         $this->set(compact('applicants'));
     }
@@ -76,6 +74,7 @@ class ApplicantsController extends AppController {
     }
 
     public function add() {
+        $this->viewBuilder()->layout('admin');
         $applicant = $this->Applicants->newEntity();
         if ($this->request->is('post')) {
 

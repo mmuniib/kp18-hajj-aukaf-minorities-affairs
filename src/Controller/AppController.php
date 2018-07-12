@@ -55,7 +55,7 @@ class AppController extends Controller {
             'authenticate' => [
                 'Form' => [
                     'fields' => [
-                        'email' => 'email',
+                        'username' => 'email',
                         'password' => 'password'
                     ],
                     'userModel' => 'Users'
@@ -88,7 +88,7 @@ class AppController extends Controller {
     public function beforeFilter(Event $event) {
 
         // Allow users to register and logout.
-        $this->Auth->allow(['add', 'login']);
+        $this->Auth->allow(['', 'login']);
     }
 
     public function isAuthorized($user) {

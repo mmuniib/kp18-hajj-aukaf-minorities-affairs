@@ -32,7 +32,7 @@
                         </div>
                         
                         <div class="body">
-                            <?= $this->Form->create($user,['id'=>'form_validation']) ?>
+                            <?= $this->Form->create($user,['id'=>'form_validation','type' => 'file']) ?>
                                 
                                <div class="form-group form-float">
                                    
@@ -74,9 +74,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <?php echo $this->Form->control('photo',['class'=>'form-control','label'=>false]);?>
-                                        <label class="form-label">Photo</label>
+                                    <div class="form">
+                                        <label class="form-label">Upload Photo</label>
+                                      <?php echo $this->Form->control('photo', ['secure' => false, 'type' => 'file', 'multiple' => true,'label'=>false]);?>
+                                        
                                     </div>
                                 </div>
                             

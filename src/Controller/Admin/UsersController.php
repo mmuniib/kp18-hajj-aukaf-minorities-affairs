@@ -25,13 +25,16 @@ class UsersController extends AppController
  public function login() {
          $this->viewBuilder()->layout('');
        if ($this->request->is('post')) {
+          
            $user = $this->Auth->identify();
            
            if ($user) {
                $this->Auth->setUser($user);
+               
                return $this->redirect($this->Auth->redirectUrl());
            }
-           $this->Flash->error(__('Invalid username or password, try again'));
+            
+           $this->Flash->error(__('Invalid email or password, try again'));
        }
        else{
            $this->Flash->error(__('not found'));
