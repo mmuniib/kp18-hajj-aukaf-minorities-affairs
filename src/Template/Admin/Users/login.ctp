@@ -70,7 +70,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <?php echo $this->Form->input('username',['class'=>'form-control','placeholder'=>'Username','label'=>false,'autofocus']);?>
+                            <?php echo $this->Form->input('email',['class'=>'form-control','placeholder'=>'Email','label'=>false,'autofocus']);?>
                            
                         </div>
                     </div>

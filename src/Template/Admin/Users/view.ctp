@@ -44,7 +44,7 @@
                                 </tr>
                                 <tr>
                                     <th scope="row"><?= __('Username') ?></th>
-                                    <td><?= h($user->username) ?></td>
+                                    <td><?= h($user->name) ?></td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><?= __('Phone') ?></th>

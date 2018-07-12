@@ -4,12 +4,7 @@
  * @var \App\Model\Entity\Role $role
  */
 ?>
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
- */
-?>
+
 <section class="content">
         <div class="container-fluid">
             <div class="block-header">

@@ -71,7 +71,8 @@ class RolesController extends AppController
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function edit($id = null)
-    {
+    {   
+        $this->viewBuilder()->layout('admin');
         $role = $this->Roles->get($id, [
             'contain' => []
         ]);

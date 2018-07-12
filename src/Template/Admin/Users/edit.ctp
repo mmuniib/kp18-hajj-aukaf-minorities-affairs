@@ -42,7 +42,7 @@
                             
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <?php echo $this->Form->text('username',['class'=>'form-control']);?>
+                                        <?php echo $this->Form->text('name',['class'=>'form-control']);?>
                                        <label class="form-label">User Name</label>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="form-group">
                                    <div class="form-line">
-                                       <?php echo $this->Form->password('password',['class'=>'form-control','label'=>false]);?>
+                                       <?php echo $this->Form->password('password',['class'=>'form-control','value'=>'','label'=>false]);?>
                                         <label class="form-label">Password</label>
                                     </div>
                                   
